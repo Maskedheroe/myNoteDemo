@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.mynotebook.view.activity.WriteNote">
+
+    <EditText
+        android:id="@+id/tv_write_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="start|center"
+        android:background="@null"
+        android:hint="默认标题"
+       />
+
+    <EditText
+        android:id="@+id/et_writetext"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_write_title"
+        android:layout_marginTop="14dp"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="在此处记录" />
+
+    <GridView
+        android:id="@+id/grid_note"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@+id/ll_button"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp">
+    </GridView>
+
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/write_note_spinner"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/tv_write_title"
+        android:layout_alignBottom="@+id/tv_write_title"
+        android:layout_alignParentEnd="true">
+    </com.jaredrummler.materialspinner.MaterialSpinner>
+
+    <LinearLayout
+        android:id="@+id/ll_button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_writetext"
+        >
+        <ImageButton
+            android:id="@+id/ib_addphotos"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:src="@drawable/addphotos"
+            />
+        <ImageButton
+            android:id="@+id/ib_deletetext"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:src="@drawable/deletetext"
+            />
+        <ImageButton
+            android:id="@+id/ib_commit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:src="@drawable/commitnote" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_button"
+        android:layout_marginStart="30dp"
+        android:text="添加图片"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_button"
+        android:layout_marginStart="150dp"
+        android:text="清空文字"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_button"
+        android:layout_marginStart="285dp"
+        android:text="提交"
+        />
+</RelativeLayout>

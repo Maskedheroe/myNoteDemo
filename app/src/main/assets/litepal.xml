@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="MyNoteBook" ></dbname>
+
+    <version value="6" ></version>
+
+    <list>
+        <mapping class="com.example.asus.mynotebook.model.NoteBean"></mapping>
+        <mapping class="com.example.asus.mynotebook.model.SubjectBean"></mapping>
+        <mapping class="com.example.asus.mynotebook.model.UserBean"></mapping>
+        <mapping class="com.example.asus.mynotebook.model.CollectionBean"></mapping>
+    </list>
+</litepal>

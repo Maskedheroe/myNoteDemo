@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_notepager_title"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tv_notepager_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_notepager_content"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/tv_notepager_date"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tv_notepager_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_notepager_course"
+        android:layout_alignBottom="@+id/tv_notepager_course"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="14dp"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/tv_notepager_content"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_notepager_title"
+        android:layout_marginTop="12dp" />
+
+    <ImageButton
+        android:id="@+id/ib_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/tv_notepager_content"
+        android:background="@null"
+        android:src="@drawable/favorite_selector" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#666666" />
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>

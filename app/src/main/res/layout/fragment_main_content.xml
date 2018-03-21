@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.example.asus.mynotebook.utils.NoScrollViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#6C87FF" />
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#fff"
+        >
+
+        <RadioButton
+            android:id="@+id/rb_main"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/main_selector"
+            />
+        <RadioButton
+            android:id="@+id/rb_find"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/find_selector"
+            />
+        <RadioButton
+            android:id="@+id/rb_note"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/note_selector"
+            />
+        <RadioButton
+            android:id="@+id/rb_mine"
+            style="@style/Bottom_Tab_Style"
+            android:drawableTop="@drawable/mine_selector"
+            />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="主页"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="发现"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="记录"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="我的"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
