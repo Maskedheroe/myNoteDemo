@@ -1,4 +1,4 @@
-package com.example.asus.mynotebook.view.pages.minepager;
+package com.example.asus.mynotebook.utils;
 
 import android.content.Context;
 import android.widget.ImageView;
