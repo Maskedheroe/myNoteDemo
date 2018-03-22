@@ -102,13 +102,28 @@ public class BlankFragment extends Fragment {
                 noteList.add(new CollectionBean("SSSS","政治", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/06/1e60d2d140d4075b80a9c23d51316def.png",-1));
                 noteList.add(new CollectionBean("SSSS","政治", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/06/e470635a40f779e580ea5180216efa0d.png",-1));
                 return noteList;
+            case "化学":
+                noteList= new ArrayList();
+                noteList.add(new CollectionBean("XXX","化学", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/21bafc124060170780d5053cf4ca2ea6.png" ,-1));
+                noteList.add(new CollectionBean("SSSS","化学","http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/e839c7ac40ce16a4806ec83b084c1874.png",-1));;
+                noteList.add(new CollectionBean("XXX","化学", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/125c1252404a4cbe8044443fcdc9a46f.png" ,-1));
+                noteList.add(new CollectionBean("XXX","化学", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/a76fa82f40209528800f8cd9ff1d4bfb.png" ,-1));
+                return noteList;
             case "物理":
                 noteList= new ArrayList();
                 noteList.add(new CollectionBean("XXX","物理", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/06/8f85601e40feab0f80a9e7bbcb206a63.png" ,-1));
                 noteList.add(new CollectionBean("SSSS","物理", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/06/7e37962840d80cf480b4a73ae15dfbc7.png",-1));;
                 noteList.add(new CollectionBean("XXX","物理", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/06/e587d96f4099d8f38043ad766f035202.png" ,-1));
                 noteList.add(new CollectionBean("XXX","物理", " http://bmob-cdn-15510.b0.upaiyun.com/2018/03/06/ce7185574064a11c808e1e5d006f3e13.png" ,-1));
-
+                return noteList;
+            case "语文":
+                noteList= new ArrayList();
+                noteList.add(new CollectionBean("XXX","语文", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/3833d84040fb5d8680fb12202c6c9fa3.png" ,-1));
+                noteList.add(new CollectionBean("SSSS","语文", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/96ba8b8d40f2676c80ac68b8130d030a.png",-1));;
+                noteList.add(new CollectionBean("XXX","语文", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/e123285d40d325f480c07a5aab895635.png" ,-1));
+                noteList.add(new CollectionBean("XXX","语文", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/1f14bb2c40349b7280a05373bb32a315.png" ,-1));
+                noteList.add(new CollectionBean("XXX","语文", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/e0054094408a5e618035e7d6e53c5abb.png" ,-1));
+                noteList.add(new CollectionBean("XXX","语文", "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/22/6d73d59c40ef72ae80bae5680f66d948.png" ,-1));
                 return noteList;
             default:
                 noteList = new ArrayList<>();
@@ -116,7 +131,6 @@ public class BlankFragment extends Fragment {
                 noteList.add(new CollectionBean("极值点问题1","数学","http://bmob-cdn-15510.b0.upaiyun.com/2018/03/05/2e9a9e9a40b6ce3a80979b7edfb07890.png",-1));
                 noteList.add(new CollectionBean("极值点问题2","数学",  "http://bmob-cdn-15510.b0.upaiyun.com/2018/03/05/2de354ed40aa169f805d8379a9f46919.png",-1));
                 return noteList;
-
         }
     }
 

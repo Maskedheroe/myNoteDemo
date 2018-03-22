@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.asus.mynotebook.R;
 import com.example.asus.mynotebook.model.CollectionBean;
 import com.example.asus.mynotebook.model.NoteBean;
+import com.example.asus.mynotebook.utils.*;
 
 import org.litepal.crud.DataSupport;
 
@@ -67,7 +68,7 @@ public class MynotesAdapter extends RecyclerView.Adapter<MynotesAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         CollectionBean noteBean  = noteLists.get(position);
-        Glide.with(context).load(noteBean.getContentMap()).into(holder.imageContent);//Glide用加载二进制流来加载图片
+        com.example.asus.mynotebook.utils.GlideImageLoader.glideLoaderByURL(context,noteBean.getContentMap(),holder.imageContent);
         holder.course.setText(noteBean.getCourse());
         holder.date.setText(noteBean.getDate());
         holder.title.setText(noteBean.getTitle());

@@ -13,6 +13,7 @@ import com.example.asus.mynotebook.R;
 import com.example.asus.mynotebook.flags.Flags;
 import com.example.asus.mynotebook.model.CollectionBean;
 import com.example.asus.mynotebook.model.NoteBean;
+import com.example.asus.mynotebook.utils.GlideImageLoader;
 
 import org.litepal.crud.DataSupport;
 
@@ -78,6 +79,7 @@ public class FindRecyclerAdapter extends RecyclerView.Adapter<FindRecyclerAdapte
             holder.title.setText(noteBean.getTitle());
             holder.course.setText(noteBean.getCourse());
             Glide.with(context).load(noteBean.getContentMap()).into(holder.iv_content);//Glide用加载二进制流来加载图片
+            GlideImageLoader.glideLoaderByURL(context,noteBean.getContentMap(),holder.iv_content);
         }
     }
 
