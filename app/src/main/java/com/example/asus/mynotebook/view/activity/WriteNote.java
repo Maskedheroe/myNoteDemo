@@ -1,12 +1,14 @@
 package com.example.asus.mynotebook.view.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ import com.lzy.imagepicker.bean.ImageItem;
 
 import org.litepal.crud.DataSupport;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class WriteNote extends AppCompatActivity implements View.OnClickListener{
@@ -38,7 +41,7 @@ public class WriteNote extends AppCompatActivity implements View.OnClickListener
     private MaterialSpinner spinner;
     private ArrayList<Object> searchSpinnerList;
     private String currentCourse;
-    private GridView grid_note;
+    private ImageView iv_note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +57,7 @@ public class WriteNote extends AppCompatActivity implements View.OnClickListener
         deleteContent = findViewById(R.id.ib_deletetext);
         commit = findViewById(R.id.ib_commit);
         spinner = findViewById(R.id.write_note_spinner);
-        grid_note = findViewById(R.id.grid_note);
+        iv_note = findViewById(R.id.iv_note);
         setListener();
     }
 
@@ -95,8 +98,13 @@ public class WriteNote extends AppCompatActivity implements View.OnClickListener
             case R.id.et_writetext:
                 break;
             case R.id.ib_addphotos:
-                Intent intent = new Intent(this, AddPhotos.class);
-//                startActivityForResult(intent,);
+                Intent intent = new Intent(this, UpdateIcon.class);
+                startActivity(intent);
+                Bundle extras = this.getIntent().getExtras();
+                if (extras != null) {
+                    String icon = extras.getString("icon");
+                    Glide.with(this).load(Uri.fromFile(new File(icon))).into(iv_note);
+                }
                 break;
             case R.id.ib_deletetext:
                 if (!writetext.getText().toString().isEmpty()) {
