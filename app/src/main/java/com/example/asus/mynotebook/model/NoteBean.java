@@ -21,6 +21,15 @@ public class NoteBean extends DataSupport {
     private String content;
     private UserBean user;
     private int userId;
+    private String contentMap;
+
+    public String getContentMap() {
+        return contentMap;
+    }
+
+    public void setContentMap(String contentMap) {
+        this.contentMap = contentMap;
+    }
 
     public NoteBean() {
     }
@@ -33,13 +42,22 @@ public class NoteBean extends DataSupport {
         this.userId = userId;
     }
 
-    public NoteBean(String title, String content, String course, int currentAccount) {
+    public NoteBean( String title, String course, String content,int currentAccount, String contentMap) {
         this.title = title;
         this.course = course;
         this.content = content;
-        mdate = Calendar.getInstance();
+        this.contentMap = contentMap;
+        this.userId = currentAccount;
+        this.mdate = Calendar.getInstance();
+     }
+
+    public NoteBean(String title, String course, String content, int currentAccount) {
+        this.title = title;
+        this.course = course;
+        this.content = content;
+        this.mdate = Calendar.getInstance();
         this.date =  mdate.get(Calendar.MONTH)+mdate.get(Calendar.DATE)+mdate.get(Calendar.HOUR_OF_DAY)+""; ;
-        userId = currentAccount;
+        this.userId = currentAccount;
     }
 
     public UserBean getUser() {
