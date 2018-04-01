@@ -118,4 +118,17 @@
             android:gravity="center"
             />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_dismisslogin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/login_updateicon"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:src="@drawable/dismisslogin"
+        />
+
 </RelativeLayout>

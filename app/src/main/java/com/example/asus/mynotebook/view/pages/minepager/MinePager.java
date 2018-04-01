@@ -55,6 +55,7 @@ public class MinePager extends BasePager {
     private LinearLayout login;
     private LinearLayout manager_login;
     private LinearLayout update_icon;
+    private View dismissLogin;
 
 
     public MinePager(Activity activity, FragmentManager mFragmentManager) {
@@ -73,6 +74,8 @@ public class MinePager extends BasePager {
         login = view.findViewById(R.id.login_pwd);
         manager_login = view.findViewById(R.id.login_manager);
         update_icon = view.findViewById(R.id.login_updateicon);
+        dismissLogin = view.findViewById(R.id.ib_dismisslogin);
+        dismissLogin.setVisibility(View.INVISIBLE);
         initLogIn(view);
         update_pwd.setOnClickListener(new View.OnClickListener() {
             @Override

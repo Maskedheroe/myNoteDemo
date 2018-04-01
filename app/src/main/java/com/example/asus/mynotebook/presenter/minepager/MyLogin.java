@@ -37,6 +37,7 @@ public class MyLogin {
     private LinearLayout login;
     private LinearLayout manager_login;
     private View update_icon;
+    private View dismissLogin;
 
     public MyLogin(View view) {
         this.view = view;
@@ -56,14 +57,13 @@ public class MyLogin {
         });
     }
 
+
     public void mlogin(final Activity mactivity) {
         initView(view);
-        update_pwd.setClickable(false); update_pwd.setAlpha((float) 0.2);
-        update_icon.setClickable(false); update_icon.setAlpha((float) 0.2);
-        login.setClickable(false);login.setAlpha((float) 0.2);
-        manager_login.setClickable(false);manager_login.setAlpha((float) 0.2);
+        disMissButton();
         ml_login.setClickable(true);
         ml_login.setVisibility(View.VISIBLE);
+        dismissLogin.setVisibility(View.VISIBLE);
         ((DefaultLoginView)ml_login.getLoginView()).setListener(new DefaultLoginView.DefaultLoginViewListener() {
             @Override
             public void onLogin(TextInputLayout loginUser, TextInputLayout loginPass) {
@@ -107,11 +107,48 @@ public class MyLogin {
                 }
             }
         });
+
+
+        dismissLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ml_login!=null){
+                    ml_login.setVisibility(View.INVISIBLE);
+                    showMissButton();
+                    dismissLogin.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+    }
+
+
+    private void showMissButton() {
+        update_pwd.setClickable(true);
+        update_pwd.setAlpha(1);
+        update_icon.setClickable(true);
+        update_icon.setAlpha(1);
+        login.setClickable(true);
+        login.setAlpha(1);
+        manager_login.setClickable(true);
+        manager_login.setAlpha(1);
+    }
+
+    private void disMissButton() {
+        update_pwd.setClickable(false);
+        update_pwd.setAlpha((float) 0.2);
+        update_icon.setClickable(false);
+        update_icon.setAlpha((float) 0.2);
+        login.setClickable(false);
+        login.setAlpha((float) 0.2);
+        manager_login.setClickable(false);
+        manager_login.setAlpha((float) 0.2);
     }
 
     public void loginsuccess(UserBean userBean, Activity mactivity) {
         Toast.makeText(mactivity, "登陆成功", Toast.LENGTH_SHORT).show();  //成功之后的逻辑
-        ml_login.setVisibility(View.INVISIBLE); //成功后隐藏登陆窗
+        if (ml_login!=null){
+          ml_login.setVisibility(View.INVISIBLE); //成功后隐藏登陆窗
+        }
         Flags.currentAccount = userBean.getId();
         Flags.USER = userBean;
         accountName.setText("");
@@ -121,7 +158,8 @@ public class MyLogin {
     public void managerlogin(final Activity mactivity) {
         initView(view);
         ml_login.setVisibility(View.VISIBLE);
-        ((DefaultLoginView)ml_login.getLoginView()).setListener(new DefaultLoginView.DefaultLoginViewListener() {
+        ((DefaultLoginView)ml_login.getLoginView())
+                .setListener(new DefaultLoginView.DefaultLoginViewListener() {
             @Override
             public void onLogin(TextInputLayout loginUser, TextInputLayout loginPass) {
                 //Handle login
@@ -181,5 +219,6 @@ public class MyLogin {
         login = view.findViewById(R.id.login_pwd);
         manager_login = view.findViewById(R.id.login_manager);
         update_icon = view.findViewById(R.id.login_updateicon);
+        dismissLogin = view.findViewById(R.id.ib_dismisslogin);
     }
 }
