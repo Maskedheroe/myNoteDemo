@@ -1,16 +1,14 @@
 package com.example.asus.mynotebook.view.pages.findpager;
 
 import android.app.Activity;
-import android.provider.ContactsContract;
+
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
+
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 
 import com.bigkoo.svprogresshud.SVProgressHUD;

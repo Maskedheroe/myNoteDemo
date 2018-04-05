@@ -2,7 +2,6 @@ package com.example.asus.mynotebook.view.pages.notepager;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,20 +13,17 @@ import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.example.asus.mynotebook.R;
 import com.example.asus.mynotebook.flags.Flags;
 import com.example.asus.mynotebook.model.CollectionBean;
-import com.example.asus.mynotebook.model.NoteBean;
-import com.example.asus.mynotebook.model.UserBean;
 import com.example.asus.mynotebook.presenter.DataOfmain;
 import com.example.asus.mynotebook.presenter.GlideImageLoader;
 import com.example.asus.mynotebook.presenter.notepager.MynotesAdapter;
 import com.example.asus.mynotebook.view.activity.NoteDetails;
-import com.example.asus.mynotebook.view.activity.WriteNote;
+import com.example.asus.mynotebook.view.activity.WriteNoteActivity;
 import com.example.asus.mynotebook.view.interfaces.BasePager;
 import com.yalantis.phoenix.PullToRefreshView;
 import com.youth.banner.Banner;
 
 import org.litepal.crud.DataSupport;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -84,7 +80,7 @@ public class NotePager extends BasePager {
                     new SVProgressHUD(mactivity).showErrorWithStatus("未登录，请先登陆", SVProgressHUD.SVProgressHUDMaskType.Clear);
                     return;
                 }
-                Intent intent = new Intent(mactivity,WriteNote.class);
+                Intent intent = new Intent(mactivity,WriteNoteActivity.class);
                 mactivity.startActivity(intent);
             }
         });

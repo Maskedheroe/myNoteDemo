@@ -16,10 +16,9 @@ public class CollectionBean extends DataSupport {
     private int id;
     private String title;
     private String date;
-    private String course;
-    private UserBean user;
-    private int userId;
-    private String contentMap;
+    private final String course;
+    private final int userId;
+    private final String contentMap;
 
     public Calendar getMdate() {
         return mdate;
@@ -57,33 +56,19 @@ public class CollectionBean extends DataSupport {
         return course;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
-    }
 
-    public UserBean getUser() {
-        return user;
-    }
 
-    public void setUser(UserBean user) {
-        this.user = user;
-    }
+
 
     public int getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public String getContentMap() {
         return contentMap;
     }
 
-    public void setContentMap(String contentMap) {
-        this.contentMap = contentMap;
-    }
 
     public CollectionBean(String title, String course, String contentMap, int id) {
             this.title = title;

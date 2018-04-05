@@ -26,7 +26,7 @@
             android:name=".view.activity.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".view.activity.WriteNote"
+            android:name=".view.activity.WriteNoteActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".presenter.notepager.AddPhotos" />
         <activity android:name=".view.activity.NoteDetails" />

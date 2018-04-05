@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.asus.mynotebook.view.activity.WriteNote">
+    tools:context="com.example.asus.mynotebook.view.activity.WriteNoteActivity">
 
     <EditText
         android:id="@+id/tv_write_title"

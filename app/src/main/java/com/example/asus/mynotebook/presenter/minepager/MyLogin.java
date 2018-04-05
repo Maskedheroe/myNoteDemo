@@ -51,8 +51,6 @@ public class MyLogin {
             @Override
             public void onClick(View v) {
                 mlogin(mactivity);
-              /*  CBDDialogUtils cbdUtils = new CBDDialogUtils();
-                cbdUtils.logIn(mactivity);*/
             }
         });
     }
@@ -150,7 +148,6 @@ public class MyLogin {
           ml_login.setVisibility(View.INVISIBLE); //成功后隐藏登陆窗
         }
         Flags.currentAccount = userBean.getId();
-        Flags.USER = userBean;
         accountName.setText("");
         accountName.setText(userBean.getUserName());
     }
@@ -175,7 +172,6 @@ public class MyLogin {
                         Toast.makeText(mactivity, "登陆成功", Toast.LENGTH_SHORT).show();  //成功之后的逻辑
                         ml_login.setVisibility(View.INVISIBLE); //成功后隐藏登陆窗
                         Flags.currentAccount = userBean.getId();
-                        Flags.USER = userBean;
                         accountName.setText("");
                         accountName.setText(userBean.getUserName());
                         Toast.makeText(mactivity,"管理员登陆",Toast.LENGTH_SHORT).show();

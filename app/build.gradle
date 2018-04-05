@@ -62,4 +62,7 @@ dependencies {
     compile 'com.yalantis:phoenix:1.2.3'
     compile 'com.ericliu.asyncexpandablelist:asyncexpandablelist:1.1.0'  //主页的ListView
 
+    implementation 'com.jakewharton:butterknife:8.8.1'  //黄油刀
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
 }

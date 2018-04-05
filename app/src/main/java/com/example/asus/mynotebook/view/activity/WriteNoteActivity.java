@@ -30,7 +30,7 @@ import org.litepal.crud.DataSupport;
 import java.io.File;
 import java.util.ArrayList;
 
-public class WriteNote extends AppCompatActivity implements View.OnClickListener {
+public class WriteNoteActivity extends AppCompatActivity implements View.OnClickListener {
 
     //书写页面
     private EditText writetitle;

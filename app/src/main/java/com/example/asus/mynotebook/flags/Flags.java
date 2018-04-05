@@ -12,6 +12,5 @@ public class Flags {
     public static int SEARCH_ITEM = 0;
     public static int SEARCH_STATE = 0;          //搜索状态
     public static int currentAccount = -1;       //当前用户身份
-    public static UserBean USER = null;
     public static int CURRENT_STATUS = 0;  //管理员或者用户身份
 }

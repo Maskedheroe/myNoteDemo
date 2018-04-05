@@ -22,7 +22,6 @@ import com.example.asus.mynotebook.flags.Flags;
 import com.example.asus.mynotebook.model.UserBean;
 import com.example.asus.mynotebook.presenter.minepager.MyLogin;
 import com.example.asus.mynotebook.presenter.minepager.UpdatePwd;
-import com.example.asus.mynotebook.utils.CBDDialogUtils;
 import com.example.asus.mynotebook.view.activity.UpdateIcon;
 import com.example.asus.mynotebook.view.interfaces.BasePager;
 
