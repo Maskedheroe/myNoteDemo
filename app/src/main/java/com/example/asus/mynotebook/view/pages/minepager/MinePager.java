@@ -1,14 +1,10 @@
 package com.example.asus.mynotebook.view.pages.minepager;
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -19,23 +15,17 @@ import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.bumptech.glide.Glide;
 import com.example.asus.mynotebook.R;
 import com.example.asus.mynotebook.flags.Flags;
-import com.example.asus.mynotebook.model.UserBean;
 import com.example.asus.mynotebook.presenter.minepager.MyLogin;
 import com.example.asus.mynotebook.presenter.minepager.UpdatePwd;
 import com.example.asus.mynotebook.view.activity.UpdateIcon;
 import com.example.asus.mynotebook.view.interfaces.BasePager;
 
-
-import org.litepal.crud.ClusterQuery;
-import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
 
 import java.io.File;
-import java.util.List;
 
+import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
-import shem.com.materiallogin.DefaultLoginView;
-import shem.com.materiallogin.DefaultRegisterView;
 import shem.com.materiallogin.MaterialLoginView;
 
 
@@ -47,6 +37,9 @@ public class MinePager extends BasePager {
     //我的页面
 
     private final FragmentManager mFragmentManager;
+
+    @BindView(R.id.login_exit)
+    private LinearLayout loginExit;
     private CircleImageView circleImageView;
     private MaterialLoginView ml_login;
     private TextView accountName;
@@ -105,12 +98,27 @@ public class MinePager extends BasePager {
             public void onClick(View v) {
                 if (Flags.currentAccount != -1) {
                     mactivity.startActivity(new Intent(mactivity, UpdateIcon.class));
-                }else {
+                } else {
                     new SVProgressHUD(mactivity).showErrorWithStatus("未登录，请先登陆", SVProgressHUD.SVProgressHUDMaskType.Clear);
                     return;
                 }
             }
         });
+        loginExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Flags.currentAccount == -1){
+                    new SVProgressHUD(mactivity).showErrorWithStatus("未登录!!", SVProgressHUD.SVProgressHUDMaskType.Clear);
+                }else {
+                    Flags.currentAccount = -1;
+                    Flags.CURRENT_STATUS = 0;
+                    circleImageView.setImageDrawable(mactivity.getResources().getDrawable(R.drawable.personal_image,null));
+                    accountName.setText("");
+                    new SVProgressHUD(mactivity).showSuccessWithStatus("已退出!", SVProgressHUD.SVProgressHUDMaskType.Clear);
+                }
+            }
+        });
+
         Bundle extras = mactivity.getIntent().getExtras();
         if (extras != null) {
             String icon = extras.getString("icon");
